@@ -13,8 +13,17 @@ load_dotenv()
 USERNAME= os.getenv("USERNAME")
 PASSWORD= os.getenv("PASSWORD")
 
+
+
 # instance of Service, Options that we imported 
 chrome_options = Options()
+
+download_path = os.getcwd()
+prefs = { 'download.default_directory': download_path}  
+chrome_options.add_experimental_option('prefs', prefs)
+
+
+
 chrome_options.add_argument("--disable-search-engine-choice-screen")
 service = Service('chromedriver-win64/chromedriver.exe')
 driver = webdriver.Chrome(service=service)
@@ -42,18 +51,30 @@ text_box = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.
 text_box.click()
 
 
-# locate the form fields 
+# locate the form fields and submit button 
 fullname_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'userName')))
 
-email_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'email')))
+email_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'userEmail')))
 
 current_address_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'currentAddress')))
 
-permanent_address_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'permanentA')))
+permanent_address_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'permanentAddress')))
 
-login_button = driver.find_element(By.ID, 'login')
+submit_button = driver.find_element(By.ID, 'submit')
 
 # Fill in the form fields 
+fullname_field.send_keys("JOhn SMith")
+email_field.send_keys("John@gmail.com")
+current_address_field.send_keys("John Street 100, New York, USA")
+permanent_address_field.send_keys("John Street 100, New York, USA")
+driver.execute_script("arguments[0].click();", submit_button) 
+
+# Locate the upload and download section and download  button
+upload_download = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'item-7')))
+upload_download.click()
+
+download_button = driver.find_element(By.ID, 'downloadButton')
+driver.execute_script("arguments[0].click();", download_button) 
 
 input("PRESS ENTER TO CLOSE THE BROWSER")
 driver.quit()
