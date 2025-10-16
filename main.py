@@ -7,6 +7,28 @@ from selenium.webdriver.common.by import By
 from dotenv import load_dotenv
 import os
 
+class WebAutomation:
+    def __init__(self):
+        # instance of Service, Options that we imported 
+        chrome_options = Options()
+        chrome_options.add_argument("--disable-search-engine-choice-screen")
+        download_path = os.getcwd()
+        prefs = { 'download.default_directory': download_path}  
+        chrome_options.add_experimental_option('prefs', prefs)
+        
+    def login(self):
+        pass
+
+    def fill_form(self):
+        pass
+
+    def download(self):
+        pass
+    
+    def close(self):
+        pass
+    
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -15,16 +37,7 @@ PASSWORD= os.getenv("PASSWORD")
 
 
 
-# instance of Service, Options that we imported 
-chrome_options = Options()
 
-download_path = os.getcwd()
-prefs = { 'download.default_directory': download_path}  
-chrome_options.add_experimental_option('prefs', prefs)
-
-
-
-chrome_options.add_argument("--disable-search-engine-choice-screen")
 service = Service('chromedriver-win64/chromedriver.exe')
 driver = webdriver.Chrome(service=service)
 
