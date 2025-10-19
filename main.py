@@ -90,9 +90,9 @@ class WebAutomation:
     
 
 
-webautomation = WebAutomation()
-
-webautomation.login(USERNAME, PASSWORD)
-webautomation.fill_form("John Smith", "John@gmail.com", "Street 1", "Street 2")
-webautomation.download()
-webautomation.close()
+if __name__ == "__main__":
+    webautomation = WebAutomation()
+    webautomation.login(USERNAME, PASSWORD)
+    webautomation.fill_form("John Smith", "John@gmail.com", "Street 1", "Street 2")
+    webautomation.download()
+    webautomation.close()
