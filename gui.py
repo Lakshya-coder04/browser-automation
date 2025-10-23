@@ -3,6 +3,34 @@ import tkinter as tk
 class App:
     def __init__(self, root):
         self.root = root
+        self.root.title("Web Automation GUI")
+
+        self.login_frame = tk.Frame(self.root)
+        self.login_frame.pack(padx=15, pady=20)
+
+        tk.Label(self.login_frame, text="Username").grid(row=0, column=0, sticky='w')
+        self.entry_username = tk.Entry(self.login_frame).grid(row=0, column=1, sticky="ew")
+
+        tk.Label(self.login_frame, text="Password").grid(row=1, column=0, sticky='w')
+        self.entry_password = tk.Entry(self.login_frame).grid(row=1, column=1, sticky="ew")
+
+        #FORM Submission Frame 
+        self.form_frame = tk.Frame(self.root)
+        self.form_frame.pack(padx=20, pady=10)
+
+        tk.Label(self.form_frame, text="Full Name").grid(row=0, column=0, sticky='w')
+        self.entry_fullname = tk.Entry(self.form_frame).grid(row=0, column=1, sticky="ew")
+
+        tk.Label(self.form_frame, text="Email").grid(row=1, column=0, sticky='w')
+        self.entry_email = tk.Entry(self.form_frame).grid(row=1, column=1, sticky="ew")
+
+        tk.Label(self.form_frame, text="Current Address").grid(row=2, column=0, sticky='w')
+        self.entry_current_Address = tk.Entry(self.form_frame).grid(row=2, column=1, sticky="ew")
+
+        tk.Label(self.form_frame, text="Permanent Address").grid(row=3, column=0, sticky='w')
+        self.entry_permanent_Address = tk.Entry(self.form_frame).grid(row=3, column=1, sticky="ew")
+
+
 
     def submit_data(self):
         pass
@@ -13,4 +41,4 @@ class App:
 
 root = tk.Tk()
 app = App(root)
-
+root.mainloop()
