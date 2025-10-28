@@ -100,7 +100,7 @@ python main.py
 
 ### 🖥️ Option 2: GUI Version
 ```bash
-python gui_app.py
+python gui.py
 ```
 
 Then:
