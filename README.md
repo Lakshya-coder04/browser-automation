@@ -43,7 +43,7 @@ browser-automation/
 │
 ├── chromedriver-win64/          # ChromeDriver executable
 ├── main.py                      # Core Selenium automation script
-├── gui_app.py                   # Tkinter GUI that uses WebAutomation class
+├── gui.py                   # Tkinter GUI that uses WebAutomation class
 ├── .env                         # Stores credentials (not pushed to GitHub)
 ├── screenshots/                 # Folder for GUI or workflow screenshots
 └── README.md                    # Project documentation
@@ -55,7 +55,7 @@ browser-automation/
 
 ### 1️⃣ Clone this Repository
 ```bash
-git clone https://github.com/<your-username>/browser-automation.git
+git clone https://github.com/Lakshya-coder04/browser-automation.git
 cd browser-automation
 ```
 
@@ -133,5 +133,5 @@ Then:
 ## ✨ Author
 
 **Lakshya Birla**  
-🔗 [GitHub Profile](https://github.com/<your-username>)  
+🔗 [GitHub Profile](https://github.com/Lakshya-coder04)  
 💼 Passionate about building intelligent automation tools that bridge humans and machines.
