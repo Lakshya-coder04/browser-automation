@@ -100,7 +100,7 @@ python main.py
 
 ### 🖥️ Option 2: GUI Version
 ```bash
-python gui_app.py
+python gui.py
 ```
 
 Then:
@@ -113,7 +113,7 @@ Then:
 
 ## 🧠 Learning Outcomes
 
-- Build a desktop GUI integrated with browser automation  
+- Build a desktop GUI integrated with browser automation    
 - Manage Selenium sessions inside a user interface  
 - Work with WebDriverWait, ExpectedConditions, and DOM elements  
 - Use `.env` for secure credential storage  
